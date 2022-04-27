@@ -1,4 +1,4 @@
-import { Card, CardCompleted } from './style';
+import { Card } from './style';
 
 const Task = ({ task, handleTaskClick }: any) => {
     console.log(handleTaskClick);
@@ -9,13 +9,9 @@ const Task = ({ task, handleTaskClick }: any) => {
             }}
         >
             {task.completed ? (
-                <div>
-                    <CardCompleted>{task.title}</CardCompleted>
-                </div>
+                <Card current>{task.title}</Card>
             ) : (
-                <div>
-                    <Card>{task.title}</Card>
-                </div>
+                <Card>{task.title}</Card>
             )}
         </div>
     );

@@ -18,7 +18,7 @@ const Home = () => {
             completed: true,
         },
     ]);
-    const handleTaskClick = ({ tasksId }: any) => {
+    const handleTaskClick = (tasksId: any) => {
         const newTasks = tasks.map((task: any) => {
             if (task.id === tasksId)
                 return { ...task, completed: !task.completed };
