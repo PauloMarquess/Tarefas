@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import { COLORS } from '../common'
 
 export default createGlobalStyle`
   * {
@@ -8,20 +9,20 @@ export default createGlobalStyle`
     outline: 0;
     text-decoration: none;
     list-style: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
   }
   body {
     -webkit-font-smoothing: antialiased;
   }
   body,input,button,textarea{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   button {
     cursor: pointer;
   }
-`
+`;
 interface ContainerProps {
     direction?: string
     justify?: string
@@ -39,7 +40,8 @@ export const Container = styled.div<ContainerProps>`
   align-items: ${props => (props.align ? props.align : 'center')};
   width: ${props => (props.width ? props.width : '100%')};
   height: ${props => (props.height ? props.height : '100vh')};
-  background: ${props => (props.background ? props.background : 'transparent')};
+  background: ${props => (props.background ? 'props.background' : 'transparent')};
+  background-color:#000 ;
   @media (max-width: 769px) {
     flex-direction: ${({ responsive }) => (responsive ? 'column' : 'row')};
     width: ${({ responsive }) => (responsive ? '100%' : '100%')};

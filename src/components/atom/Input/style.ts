@@ -9,6 +9,6 @@ export const CardInput = styled.div`
     height:40px ;
     padding:0 10px;
     border-radius:5px;
-    
+    border:none ;
   }
 `;

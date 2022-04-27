@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { COLORS } from '../../../common';
 
 export const CardButton = styled.div`
-    width: 100%;
+    
     button {
         background-color: chartreuse;
         height: 40px;
@@ -14,5 +14,6 @@ export const CardButton = styled.div`
         font-weight: bold;
         cursor: pointer;
         border: none;
+        
     }
 `;

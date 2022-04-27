@@ -2,6 +2,8 @@ import { useState } from 'react';
 import AddTask from '../../components/molecule/AddTask';
 import Tasks from '../../components/molecule/Tasks';
 import { Container } from '../../styles/global';
+import { v4 as uuidv4 } from 'uuid';
+import { MiniContainer } from './style';
 
 const Home = () => {
     const [tasks, setTasks] = useState<any>([
@@ -13,16 +15,25 @@ const Home = () => {
         {
             id: '2',
             title: 'Ler Livros',
-            completed: false,
+            completed: true,
         },
     ]);
+    const handleTaskClick = ({ tasksId }: any) => {
+        const newTasks = tasks.map((task: any) => {
+            if (task.id === tasksId)
+                return { ...task, completed: !task.completed };
+            console.log('pegou');
+            return task;
+        });
+        setTasks(newTasks);
+    };
 
     const handleTasksAddition = (tasksTitle: any) => {
         const newTasks = [
             ...tasks,
             {
                 title: tasksTitle,
-                id: Math.random(),
+                id: uuidv4(),
                 completed: false,
             },
         ];
@@ -30,10 +41,10 @@ const Home = () => {
     };
     return (
         <Container>
-            <div>
+            <MiniContainer>
                 <AddTask handleTasksAddition={handleTasksAddition} />
-                <Tasks tasks={tasks} />
-            </div>
+                <Tasks tasks={tasks} handleTaskClick={handleTaskClick} />
+            </MiniContainer>
         </Container>
     );
 };

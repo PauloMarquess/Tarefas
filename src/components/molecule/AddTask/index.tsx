@@ -10,11 +10,12 @@ const AddTask = ({ handleTasksAddition }: any) => {
     };
     const handleAddTaskClick = () => {
         handleTasksAddition(inputData);
+        setInputData('');
     };
     return (
         <CardAdd>
             <Input onChange={handleInputChange} value={inputData} type="text" />
-            <Button children="add" onClick={handleAddTaskClick} />
+            <Button children="Adicionar" onClick={handleAddTaskClick} />
         </CardAdd>
     );
 };
