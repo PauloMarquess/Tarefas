@@ -39,11 +39,22 @@ const Home = () => {
         ];
         setTasks(newTasks);
     };
+    const handleTaskDelete = (taskId: any) => {
+        const newTasks = tasks.filter(
+            (task: { id: any }) => task.id !== taskId
+        );
+        setTasks(newTasks);
+    };
+
     return (
         <Container>
             <MiniContainer>
                 <AddTask handleTasksAddition={handleTasksAddition} />
-                <Tasks tasks={tasks} handleTaskClick={handleTaskClick} />
+                <Tasks
+                    tasks={tasks}
+                    handleTaskClick={handleTaskClick}
+                    handleTaskDelete={handleTaskDelete}
+                />
             </MiniContainer>
         </Container>
     );

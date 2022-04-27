@@ -1,10 +1,14 @@
 import Task from '../../atom/Task';
 
-const Tasks = ({ tasks, handleTaskClick }: any) => {
+const Tasks = ({ tasks, handleTaskClick, handleTaskDelete }: any) => {
     return (
         <div>
             {tasks.map((task: any) => (
-                <Task task={task} handleTaskClick={handleTaskClick} />
+                <Task
+                    task={task}
+                    handleTaskClick={handleTaskClick}
+                    handleTaskDelete={handleTaskDelete}
+                />
             ))}
         </div>
     );
