@@ -2,12 +2,14 @@ import { CardInput } from './style';
 
 interface TypeProps {
     type: string;
+    onChange?: any;
+    value: any;
 }
 
-const Input = ({ type }: TypeProps) => {
+const Input = ({ type, onChange, value }: TypeProps) => {
     return (
         <CardInput>
-            <input type={type} />
+            <input onChange={onChange} value={value} type={type} />
         </CardInput>
     );
 };
