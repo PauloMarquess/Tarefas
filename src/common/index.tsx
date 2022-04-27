@@ -1,1 +1,4 @@
-export const COLORS = {};
+export const COLORS = {
+    BACKGROUND: '#444',
+    WHITE: '#eee',
+};
