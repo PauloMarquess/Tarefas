@@ -28,6 +28,9 @@ export const CardButton = styled.div`
     display: flex;
     gap: 10px;
     Button {
+        font-size:14px ;
+        font-weight:bold ;
+        margin-right:30px ;
         background: transparent;
         color:${COLORS.primary} ;
     }

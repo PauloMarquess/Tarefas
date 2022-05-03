@@ -23,12 +23,6 @@ const Task = ({ task, handleTaskClick, handleTaskDelete }: any) => {
                         handleTaskDelete(task.id);
                     }}
                 />
-                <Button
-                    children="X"
-                    onClick={() => {
-                        handleTaskDelete(task.id);
-                    }}
-                />
             </CardButton>
         </CardTask>
     );

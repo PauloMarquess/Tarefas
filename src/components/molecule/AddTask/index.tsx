@@ -8,6 +8,7 @@ const AddTask = ({ handleTasksAddition }: any) => {
     const handleInputChange = (e: any) => {
         setInputData(e.target.value);
     };
+
     const handleAddTaskClick = () => {
         handleTasksAddition(inputData);
         setInputData('');
